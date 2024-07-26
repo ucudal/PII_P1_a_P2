@@ -171,7 +171,7 @@ Aquí ya puedes ver algunas diferencias en la filosofía subyacente en ambos len
 
 ## Algoritmo en lenguaje natural
 
-Un programa lee el candidato por el cual el usuario va a votar. Las posibilidades son: candidato `A` por el partido rojo, candidato `B` por el partido verde, candidato `C` por el partido azul. Según el candidato elegido —`A`, `B` ó `C`, en forma de string— se imprimirá el mensaje "Usted ha votado por el partido [color que corresponda al candidato elegido]". Si el usuario ingresa una opció́n que no corresponde a ninguno de los candidatos disponibles, imprimir "Opción errónea".
+Un programa lee el candidato por el cual el usuario va a votar. Las posibilidades son: candidato `A` por el partido rojo, candidato `B` por el partido verde, candidato `C` por el partido azul. Según el candidato elegido —`A`, `B` ó `C`, en forma de string— se imprimirá el mensaje "Usted ha votado por el partido [color que corresponda al candidato elegido]". Si el usuario ingresa una opción que no corresponde a ninguno de los candidatos disponibles, imprimir "Opción errónea".
 
 ## Código en Python
 
@@ -437,3 +437,99 @@ También son iguales los operadores aritméticos `+`, `-`, `*`, `/`, `+=`, `-=`,
 
 [^1]: La diferencia es si se evalúa el segundo operando. Ver [and](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#logical-and-operator-) y [or](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-).
 [^2]: Mientras `/=` aplicado a objetos de tipo `int` en Python da como resultado un objeto de tipo `float`, en C# da un objeto de tipo `int` siempre. Ver [division operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/division-operator).
+
+# Ejercicio 4
+
+## Algoritmo en lenguaje natural
+
+Escribir un programa que lea números desde el teclado, hasta que el usuario ingrese el 0. Finalmente, mostrar la sumatoria de todos los números positivos ingresados —solo de los números que sean positivos—.
+
+## Código en Python
+
+Es necesario leer un número y luego continuar leyendo repetidamente mientras el usuario no ingrese el número cero. Esto se logra con la estructura repetitiva condicional `while`. Para obtener la sumatoria de todos los números usamos un acumulador.
+
+```python
+suma = 0
+numero = int(input("Ingrese número (0 para terminar): "))
+while numero != 0:
+    if numero > 0:
+        suma = suma + numero
+    numero = int(input("Ingrese número (0 para terminar): "))
+print("La suma es: ", suma)
+```
+
+Puedes ver y ejecutar el programa [aquí](./Ejercicio_4/Ejercicio_4.py)
+
+## Código en C#
+
+El algoritmo en C# se implementa también con la estructura repetitiva condicional `while`.>
+
+> [!IMPORTANT]
+> Aunque la forma como escribes un `while` en Python y en C# sea diferente, si sabes determinar la estructura repetitiva condicional en Python a partir del texto en lenguaje natural, basta con que sepas cómo escribir esa estructura en C#, porque la estructura repetitiva condicional en sí debería ser la misma.
+
+```csharp
+static class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("C#");
+        int suma = 0;
+        Console.Write("Ingrese número (0 para terminar): ");
+        int numero = int.Parse(Console.ReadLine());
+        while (numero != 0)
+        {
+            if (numero > 0)
+            {
+                suma = suma + numero;
+            }
+
+            Console.Write("Ingrese número (0 para terminar): ");
+            numero = int.Parse(Console.ReadLine());
+        }
+
+        Console.WriteLine("La suma es: " + suma.ToString());
+    }
+}
+```
+
+Puedes ver y ejecutar el código [aquí](./Ejercicio_4/Ejercicio_4.cs).
+
+Noten que como no hay ninguna función definida en Python, todo el código en C# va dentro del método `Main` de la clase `Program`, eso sería una forma equivalente de escribir el programa en ambos lenguajes.
+
+La estructura `while` es prácticamente igual en ambos lenguajes; algunas diferencias a continuación:
+
+| Python                                                    | C#                                                   |
+|-----------------------------------------------------------|------------------------------------------------------|
+| Los paréntesis son opcionales en la condición del `while` | La condición del `while` va siempre entre paréntesis |
+| `int()` se utiliza para convertir una string en un entero | `int.Parse()` convierte una string en un entero      |
+
+
+C# tiene otra estructura repetitiva condicional similar a `while` pero que controla la condición **luego** de ejecutar el bloque de código asociado: la estructura `do-while`. En este caso puede ser mejor —mostramos sólo el método `Main`—.
+
+```csharp
+static void Main()
+{
+    Console.WriteLine("C#");
+    
+    int suma = 0;
+    int numero;
+    do
+    {
+        Console.Write("Ingrese número (0 para terminar): ");
+        numero = int.Parse(Console.ReadLine());
+        if (numero > 0)
+        {
+            suma = suma + numero;
+        }
+    } while (numero != 0);
+    
+
+    Console.WriteLine("La suma es: " + suma.ToString());
+}
+```
+
+Esta versión del método `Main` está comentada [aquí](./Ejercicio_4/Ejercicio_4.cs); comenta la versión con `while` y quita los comentarios a esta version con `do-while` para ejecutarla.
+
+> [!TIP]
+> Puedes comentar o quitar los comentarios rápidamente bloques de código con las teclas <kbd>Ctrl</kbd>+<kbd>/</kbd> en Windows o <kbd>Cmd</kbd>+<kbd>/</kbd> en Mac y Linux.
+

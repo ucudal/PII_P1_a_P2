@@ -81,16 +81,26 @@ Puedes ver y ejecutar el programa [aquí](./Ejercicio_1/Ejercicio_1.cs):
 
 Varias diferencias entre ambos lenguajes, estas son algunas:
 
+<style>
+td {
+  vertical-align: top;
+  width: 50%;
+}
+tr {
+  vertical-align: top;
+  width: 50%;
+}
+</style>
 <table>
-  <tr style="vertical-align: top">
-    <th style="width: 50%;">
+  <tr>
+    <th>
       Python
     </th>
-    <th style="width: 50%">
+    <th>
       C#
     </th>
   </tr>
-  <tr style="vertical-align: top">
+  <tr>
     <td>
       Los bloques de código se definen con sangría
     </td>
@@ -114,7 +124,7 @@ Varias diferencias entre ambos lenguajes, estas son algunas:
       Las sentencias terminan con `;`
     </td>
   </tr>
-  <tr style="vertical-align: top">
+  <tr>
     <td>
       No se declara el tipo de los parámetros
     </td>
@@ -122,7 +132,7 @@ Varias diferencias entre ambos lenguajes, estas son algunas:
       Es necesario declarar siempre el tipo de los parámetros; en este caso el tipo es  que corresponde a enteros
     </td>
   </tr>
-  <tr style="vertical-align: top">
+  <tr>
     <td>
       No se declara el resultado, sino que se asume a partir de la sentencia <code>return</code>
     </td>
@@ -130,7 +140,7 @@ Varias diferencias entre ambos lenguajes, estas son algunas:
       Es necesario declarar el tipo del resultado; en este caso el tipo del resultado también es <code>int</code>  
     </td>
   </tr>
-  <tr style="vertical-align: top">
+  <tr>
     <td>
       El nombre usa <b>snake_case</b>; las palabras se escriben con minúsculas, separadas por `_`
     </td>
@@ -146,7 +156,7 @@ Varias diferencias entre ambos lenguajes, estas son algunas:
       La condición del `if` va siempre entre paréntesis
     </td>
   </tr>
-  <tr style="vertical-align: top">
+  <tr>
     <td>
       Para imprimir en la terminal se usa <code>print()</code>, que es una función
     </td>
@@ -154,7 +164,7 @@ Varias diferencias entre ambos lenguajes, estas son algunas:
       Para imprimir en la terminal se usa el método <code>WriteLine()</code> de la clase <code>Console</code>
     </td>
   </tr>
-  <tr style="vertical-align: top">
+  <tr>
     <td>
       <code>print</code> recibe varios datos a imprimir, convierte los que sea necesario en cadenas de caracteres, los concatena y los muestra en la terminal
     </td>
@@ -251,10 +261,10 @@ Algunas otras diferencias:
 
 <table>
   <tr style="vertical-align: top">
-    <th style="width: 50%;">
+    <th style="width:50%">
       Python
     </th>
-    <th style="width: 50%">
+    <th style="width:50%">
       C#
     </th>
   </tr>

@@ -12,7 +12,7 @@ Cuando abras los archivos `.py` de Python, Rider te sugerirá instalar el comple
 > [!NOTE]
 > En el código Python los algoritmos están implementados en una función definida al comienzo del programa; esa función se usa con algunos ejemplos para mostrar su funcionamiento en el programa principal que está luego de la función. En el código en C# los algoritmos están implementados en un método estático al comienzo de la clase `Program`; ese método se usa con algunos ejemplos en el método `Main` de la clase `Program`.
 > 
-> Para ejecutar el código abre este repositorio en Rider primero. Vas a ver en la esquina superior derecha de Rider una lista desplegable con los nombres de los ejemplos y al lado el icono ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg); haz clic en este ícono para ejecutar el ejemplo.
+> Para ejecutar el código clona y abre este repositorio en Rider primero. Vas a ver en la esquina superior derecha de Rider una lista desplegable con los nombres de los ejemplos y al lado el icono ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg); haz clic en este ícono para ejecutar el ejemplo.
 
 # Ejercicio 1
 
@@ -303,3 +303,122 @@ static string Votar(string candidato)
     }
 }
 ```
+
+# Ejercicio 3
+
+## Algoritmo en lenguaje natural
+
+Escribir un programa que lea el día de la semana en letras —por ejemplo, "lunes"— e imprima el siguiente mensaje:
+- Si es lunes imprima "Hoy comienza la semana. ¡Animo!",
+- Si es viernes "¡Ya casi termina!"
+- Si es sábado o domingo “¡Siiii! ¡Fin de semana!”
+- Si el día ingresado no es ninguno de esos (pero es válido), imprimir el siguiente mensaje "¡Vamos que se puede!"
+- Si el día ingresado no es válido entonces debe mostrar un mensaje que lo indique
+
+## Código en Python
+
+Es necesario determinar cuál es el día de la semana; eso se hace con la estructura de control `if-elif-else` evaluando múltiples condiciones, aunque en algún caso será necesario combinar las condiciones, por ejemplo para "sábado o domingo".
+
+```python
+def mensaje(dia_semana):
+    if dia_semana.lower() == "lunes":
+        print("Hoy comienza la semana. ¡Ánimo!")
+    elif dia_semana.lower() == "viernes":
+        print("Ya casi termina!")
+    elif dia_semana.lower() == "sábado" or \
+            dia_semana.lower() == "domingo":
+        print("¡Siiii! ¡Fin de semana!")
+    elif (dia_semana.lower() == "martes" or
+          dia_semana.lower() == "miércoles" or
+          dia_semana.lower() == "jueves"):
+        print("¡Vamos que se puede!")
+    else:
+        print("¡Dia de la semana invalido!")
+
+
+dia_sem = input("Ingrese el día de la semana > ")
+mensaje(dia_sem)
+```
+
+Vean el uso de `or` para evaluar si el día de la semana es "sábado o domingo" por ejemplo. Podría haber un `elif` con la condición `dia_semana.lower() == sábado` para evaluar si el día es sábado y otro con la condición `dia_semana.lower() == domingo` para evaluar si es domingo, pero como en ambos casos hay que mostrar el mismo mensaje, entonces es mejor usar `or` para evaluar si es sábado o si es domingo.
+
+## Código en C#
+
+Nuevamente, la estructura de control a usar en C# es una concatenación de estructuras de control `if-else` como en el ejemplo anterior. El método estático `Mensaje()` de la clase `Program` sería el equivalente a la función `mensaje()` en Python.
+
+```csharp
+static class Program
+{
+    static void Mensaje(string diaSemana)
+    {
+        if (diaSemana.ToLower() == "lunes")
+        {
+        Console.WriteLine("Hoy comienza la semana. !Ánimo!");
+        }
+        else if (diaSemana.ToLower() == "viernes")
+        {
+        Console.WriteLine("¡Ya casi termina!");
+        }
+        else if (diaSemana.ToLower() == "sábado"
+            || diaSemana.ToLower() == "domingo")
+        {
+        Console.WriteLine("¡Siiii! ¡Fin de semana!");
+        }
+        else if (diaSemana.ToLower() == "martes"
+            || diaSemana.ToLower() == "miércoles"
+            || diaSemana.ToLower() == "jueves")
+        {
+            Console.WriteLine("¡Vamos que se puede!");
+        }
+        else
+        {
+            Console.WriteLine("¡Dia de la semana invalido!");
+        }
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("C#");
+        Console.Write("Ingrese el día de la semana > ");
+        string diaSem = Console.ReadLine();
+        Mensaje(diaSem);
+    }
+}
+```
+
+Algunas nuevas diferencias:
+
+<table>
+  <tr style="vertical-align: top">
+    <th width="50%">
+      Python
+    </th>
+    <th width="50%">
+      C#
+    </th>
+  </tr>
+  <tr style="vertical-align: top">
+    <td>
+      El operador <code>or</code> determina si cualquiera de dos expresiones lógicas —o ambas— son verdaderas
+    </td>
+    <td>
+      El operador <code>||</code> es usado para evaluar si cualquiera de dos expresiones lógicas —o ambas— son verdaderas
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Cada sentencia ocupa una línea a menos que se use la continuación de línea implícita —cuando hay paréntesis por ejemplo—, como es el caso de la comparación por martes, miércoles o jueves; o que la línea termine con `\`, como es el caso de la comparación por sábado o domingo.
+    </td>
+    <td style="vertical-align: top">
+      Es posible dividir la sentencias en múltiples líneas
+    </td>
+  </tr>
+  <tr>
+    <td>
+      No es necesario indicar que la función no retorna un valor —en este caso decimos que es un procedimiento—
+    </td>
+    <td>
+      Para indicar que un método no retorna un valor es necesario indicarlo con `void`
+    </td>
+  </tr>
+</table>

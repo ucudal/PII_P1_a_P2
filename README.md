@@ -3,16 +3,16 @@
 Recordar estructuras de control de flujo y estructuras de repetición condicional en algoritmos expresados en lenguaje natural y su correspondiente implementación en Python; a partir del algoritmo en lenguaje natural y en Python, ver cómo se implementan esos algoritmos en C#.
 
 > [!IMPORTANT]
-> En este repositorio los algoritmos en C# están implementados como métodos estáticos en la clase `Program` por simplicidad; no recomendamos que hagas tus programas de esta forma, verás más adelante en el curso la forma correcta de hacerlo.
+> En este repositorio los algoritmos en C# están implementados como métodos estáticos en la clase `Program`. No recomendamos que hagas tus programas con todo el código en un solo método estático de la clase `Program`, aquí lo hacemos de esta forma para que sea más fácil mostrar la equivalencia con las funciones que programabas en Python.
 
 Este repositorio contiene ejemplos de código en Python y en C#.
 
 Cuando abras los archivos `.py` de Python, Rider te sugerirá instalar el complemento [Python Community Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition), pero no te preocupes de hacerlo ahora; sigue las instrucciones cuando Rider te lo pregunte.
 
 > [!NOTE]
-> En el código Python los algoritmos están implementados en una función definida al comienzo del programa; esa función se usa con algunos ejemplos para mostrar su funcionamiento en el programa principal. En el código en C# los algoritmos están implementados en un método estático al comienzo de la clase `Program`; ese método se usa con algunos ejemplos en el método `Main` de la clase `Program`.
+> En el código Python los algoritmos están implementados en una función definida al comienzo del programa; esa función se usa con algunos ejemplos para mostrar su funcionamiento en el programa principal que está luego de la función. En el código en C# los algoritmos están implementados en un método estático al comienzo de la clase `Program`; ese método se usa con algunos ejemplos en el método `Main` de la clase `Program`.
 > 
-> Para ejecutar el código Python, haz clic con el botón secundario del mouse en el fondo del editor y elige la opción ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg) `Run`. Para ejecutar el código C#, haz clic en el ícono ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg) que aparece junto al método `Main` de la clase `Program.`
+> Para ejecutar el código abre este repositorio en Rider primero. Vas a ver en la esquina superior derecha de Rider una lista desplegable con los nombres de los ejemplos y al lado el icono ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg); haz clic en este ícono para ejecutar el ejemplo.
 
 # Ejercicio 1
 
@@ -83,12 +83,12 @@ Varias diferencias entre ambos lenguajes, estas son algunas:
 
 <table>
   <tr style="vertical-align: top">
-    <td style="width: 50%">
+    <th style="width: 50%;">
       Python
-    </td>
-    <td style="width: 50%">
+    </th>
+    <th style="width: 50%">
       C#
-    </td>
+    </th>
   </tr>
   <tr style="vertical-align: top">
     <td>
@@ -251,12 +251,12 @@ Algunas otras diferencias:
 
 <table>
   <tr style="vertical-align: top">
-    <td style="width: 50%">
+    <th style="width: 50%;">
       Python
-    </td>
-    <td style="width: 50%">
+    </th>
+    <th style="width: 50%">
       C#
-    </td>
+    </th>
   </tr>
   <tr style="vertical-align: top">
     <td>

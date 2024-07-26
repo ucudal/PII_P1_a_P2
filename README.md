@@ -81,22 +81,13 @@ Puedes ver y ejecutar el programa [aquí](./Ejercicio_1/Ejercicio_1.cs):
 
 Varias diferencias entre ambos lenguajes, estas son algunas:
 
-<style>
-td {
-  vertical-align: top;
-  width: 50%;
-}
-tr {
-  vertical-align: top;
-  width: 50%;
-}
-</style>
+
 <table>
   <tr>
-    <th>
+    <th width="50%">
       Python
     </th>
-    <th>
+    <th width="50%">
       C#
     </th>
   </tr>
@@ -261,10 +252,10 @@ Algunas otras diferencias:
 
 <table>
   <tr style="vertical-align: top">
-    <th style="width:50%">
+    <th width="50%">
       Python
     </th>
-    <th style="width:50%">
+    <th width="50%">
       C#
     </th>
   </tr>

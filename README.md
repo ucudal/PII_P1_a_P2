@@ -422,3 +422,18 @@ Algunas nuevas diferencias:
     </td>
   </tr>
 </table>
+
+Los otros operadores lógicos son:
+
+| Python | C#           |
+|--------|--------------|
+| or     | \| o \|\|[^1]|
+| and    | & o &&[^1]   |
+| not    | !            |
+
+Dicho sea de paso, vieron que para comparar si dos elementos son iguales, tanto Python como C# usan el operador `==`; los operadores de comparación son iguales en ambos lenguajes, esto aplica para `<`, `<=`,`>`, `>=`, `==`, `!=`.
+
+También son iguales los operadores aritméticos `+`, `-`, `*`, `/`, `+=`, `-=`, `*=`, `/=`[^2].
+
+[^1]: La diferencia es si se evalúa el segundo operando. Ver [and](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#logical-and-operator-) y [or](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#conditional-logical-and-operator-).
+[^2]: Mientras `/=` aplicado a objetos de tipo `int` en Python da como resultado un objeto de tipo `float`, en C# da un objeto de tipo `int` siempre. Ver [division operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/division-operator).

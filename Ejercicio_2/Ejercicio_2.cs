@@ -1,16 +1,28 @@
-static class Program
+Console.WriteLine("C#");
+Console.WriteLine("A - Partido Rojo");
+Console.WriteLine("B - Partido Verde");
+Console.WriteLine("C - Partido Azul");
+Console.WriteLine();
+
+Console.Write("Ingrese opción: ");
+string option = Console.ReadLine();
+option = option.ToUpper();
+
+Console.WriteLine(Functions.Vote(option));
+
+public static class Functions
 {
-    static string Votar(string candidato)
+    public static string Vote(string candidate)
     {
-        if (candidato == "A")
+        if (candidate == "A")
         {
             return "Usted a votado por el partido Rojo";
         }
-        else if (candidato == "B")
+        else if (candidate == "B")
         {
             return "Usted a votado por el partido Verde";
         }
-        else if (candidato == "C")
+        else if (candidate == "C")
         {
             return "Usted a votado por el partido Azul";
         }
@@ -20,42 +32,26 @@ static class Program
         }
     }
     
-    static string VotarSwitch(string candidato)
-    {
-        switch (candidato)
-        {
-            case "A":
-            {
-                return "Usted a votado por el partido Rojo";
-            }
-            case "B":
-            {
-                return "Usted a votado por el partido Verde";
-            }
-            case "C":
-            {
-                return "Usted a votado por el partido Azul";
-            }
-            default:
-            {
-                return "Opción errónea";
-            }
-        }
-    }
-
-    static void Main()
-    {
-        Console.WriteLine("C#");
-        Console.WriteLine("A - Partido Rojo");
-        Console.WriteLine("B - Partido Verde");
-        Console.WriteLine("C - Partido Azul");
-        Console.WriteLine();
-
-        Console.Write("Ingrese opción: ");
-        string opc = Console.ReadLine();
-        opc = opc.ToUpper();
-
-        Console.WriteLine(Votar(opc));
-        Console.WriteLine(VotarSwitch(opc));
-    }
+    // public static string Vote(string candidate)
+    // {
+    //     switch (candidate)
+    //     {
+    //         case "A":
+    //         {
+    //             return "Usted a votado por el partido Rojo";
+    //         }
+    //         case "B":
+    //         {
+    //             return "Usted a votado por el partido Verde";
+    //         }
+    //         case "C":
+    //         {
+    //             return "Usted a votado por el partido Azul";
+    //         }
+    //         default:
+    //         {
+    //             return "Opción errónea";
+    //         }
+    //     }
+    // }
 }

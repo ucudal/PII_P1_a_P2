@@ -1,10 +1,10 @@
-def valor_absoluto(n):
-    if n < 0:
-        return n * -1
+def absolute_value(number):
+    if number < 0:
+        return number * -1
     else:
-        return n
+        return number
 
 
 print("Pyton")
-print("Valor absoluto de -52:", valor_absoluto(-52))
-print("Valor absoluto de 52:", valor_absoluto(52))
+print("Valor absoluto de -52:", absolute_value(-52))
+print("Valor absoluto de 52:", absolute_value(52))

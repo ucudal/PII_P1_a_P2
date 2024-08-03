@@ -1,9 +1,9 @@
-def votar(candidato):
-    if candidato == 'A':
+def vote(candidate):
+    if candidate == 'A':
         return "Usted a votado por el partido Rojo"
-    elif candidato == 'B':
+    elif candidate == 'B':
         return "Usted a votado por el partido Verde"
-    elif candidato == 'C':
+    elif candidate == 'C':
         return "Usted a votado por el partido Azul"
     else:
         return "Opción errónea"
@@ -14,7 +14,7 @@ print("B - Partido Verde")
 print("C - Partido Azul")
 print()
 
-opc = input("Ingrese opción: ")
-opc = opc.upper()
+option = input("Ingrese opción: ")
+option = option.upper()
 
-print(votar(opc))
+print(vote(option))

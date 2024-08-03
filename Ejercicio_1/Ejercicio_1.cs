@@ -1,21 +1,18 @@
-static class Program
+Console.WriteLine("C#");
+Console.WriteLine("Valor absoluto de -52: " + Functions.AbsoluteValue(-52).ToString());
+Console.WriteLine("Valor absoluto de 52:" + Functions.AbsoluteValue(52).ToString());
+
+public static class Functions
 {
-    static int ValorAbsoluto(int n)
+    public static int AbsoluteValue(int number)
     {
-        if (n < 0)
+        if (number < 0)
         {
-            return n * -1;
+            return number * -1;
         }
         else
         {
-            return n;
+            return number;
         }
-    }
-
-    static void Main()
-    {
-        Console.WriteLine("C#");
-        Console.WriteLine("Valor absoluto de -52: " + ValorAbsoluto(-52).ToString());
-        Console.WriteLine("Valor absoluto de 52:" + ValorAbsoluto(52).ToString());
     }
 }

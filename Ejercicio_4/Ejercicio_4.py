@@ -1,7 +1,7 @@
-suma = 0
-numero = int(input("Ingrese número (0 para terminar): "))
-while numero != 0:
-    if numero > 0:
-        suma = suma + numero
-    numero = int(input("Ingrese número (0 para terminar): "))
-print("La suma es: ", suma)
+total = 0
+number = int(input("Ingrese número (0 para terminar): "))
+while number != 0:
+    if number > 0:
+        total = total + number
+    number = int(input("Ingrese número (0 para terminar): "))
+print("La total es: ", total)

@@ -1,38 +1,35 @@
-static class Program
+Console.WriteLine("C#");
+Console.Write("Ingrese el día de la semana: ");
+string inputDay = Console.ReadLine();
+Console.WriteLine(Functions.MessageForDay(inputDay));
+
+public static class Functions
 {
-    static void Mensaje(string diaSemana)
+    public static string MessageForDay(string weekDay)
     {
-        if (diaSemana.ToLower() == "lunes")
+        if (weekDay.ToLower() == "lunes")
         {
-            Console.WriteLine("Hoy comienza la semana. !Ánimo!");
+            return "Hoy comienza la semana. !Ánimo!";
         }
-        else if (diaSemana.ToLower() == "viernes")
+        else if (weekDay.ToLower() == "viernes")
         {
-            Console.WriteLine("¡Ya casi termina!");
+            return "¡Ya casi termina!";
         }
-        else if (diaSemana.ToLower() == "sábado"
-                 || diaSemana.ToLower() == "domingo")
+        else if (weekDay.ToLower() == "sábado"
+                 || weekDay.ToLower() == "domingo")
         {
-            Console.WriteLine("¡Siiii! ¡Fin de semana!");
+            return "¡Siiii! ¡Fin de semana!";
         }
-        else if (diaSemana.ToLower() == "martes"
-                 || diaSemana.ToLower() == "miércoles"
-                 || diaSemana.ToLower() == "jueves")
+        else if (weekDay.ToLower() == "martes"
+                 || weekDay.ToLower() == "miércoles"
+                 || weekDay.ToLower() == "jueves")
 
         {
-            Console.WriteLine("¡Vamos que se puede!");
+            return "¡Vamos que se puede!";
         }
         else
         {
-            Console.WriteLine("¡Dia de la semana invalido!");
+            return "¡Dia de la semana invalido!";
         }
-    }
-
-    static void Main()
-    {
-        Console.WriteLine("C#");
-        Console.Write("Ingrese el día de la semana > ");
-        string diaSem = Console.ReadLine();
-        Mensaje(diaSem);
     }
 }

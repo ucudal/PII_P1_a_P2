@@ -1,3 +1,4 @@
+Console.WriteLine("C#");
 Console.WriteLine(Functions.IsPangram(
     "El viejo Señor Gómez pedía queso, kiwi y habas, pero le ha tocado un saxofón")); // True
 Console.WriteLine(Functions.IsPangram(

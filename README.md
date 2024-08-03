@@ -20,6 +20,14 @@ No tienes que programar nada, los algoritmos ya están implementados tanto en
 Python como en C#. Pero sí tienes que comenzar a familiarizarte con código en C#
 y entender las diferencias entre ambos lenguajes.
 
+> [!IMPORTANT]
+> Para ejecutar el código de estos ejemplos clona este repositorio en tu equipo
+> primero y ábrelo en Rider luego para ejecutar el código. Vas a ver en la
+> esquina superior derecha de Rider una lista desplegable con los nombres de los
+> ejemplos y al lado el icono
+> ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg);
+> haz clic en este ícono para ejecutar el ejemplo.
+
 Cuando abras los archivos `.py` de Python, Rider te sugerirá instalar el
 complemento [Python Community
 Edition](https://plugins.jetbrains.com/plugin/7322-python-community-edition),
@@ -34,14 +42,6 @@ lo pregunte.
 > estáticos de una clase `Functions`; no es la única forma en que se podría
 > haber hecho, y no es la forma que recomendamos que uses para tus programas,
 > pero debería ser fácil darse cuenta de la equivalencia.
-
-> [!IMPORTANT]
-> Para ejecutar el código clona este repositorio en tu equipo primero y ábrelo
-> en Rider luego para ejecutar el código. Vas a ver en la esquina superior
-> derecha de Rider una lista desplegable con los nombres de los ejemplos y al
-> lado el icono
-> ![](https://intellij-icons.jetbrains.design/icons/AllIcons/expui/run/run_dark.svg);
-> haz clic en este ícono para ejecutar el ejemplo.
 
 # Ejercicio 1
 
@@ -871,7 +871,7 @@ def is_pangram(input_string):
             return False
     return True
 
-
+print("Python")
 print(is_pangram("El viejo Señor Gómez pedía queso, kiwi y habas, pero le ha tocado un saxofón")) # True
 print(is_pangram("José compró una vieja zampoña en Perú. Excusándose, Sofía tiró su whisky al desagüe de la banqueta")) # True
 print(is_pangram("El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo")) # True
@@ -880,9 +880,9 @@ print(is_pangram("Compañera usted sabe que puede contar conmigo no hasta dos ni
 
 Puedes ver y ejecutar el código [aquí](./Ejercicio_6/Ejercicio_6.py).
 
-## Código C #
+## Código C#
 
-La clase `Funciones` va a tener en este caso los métodos `string
+La clase `Functions` va a tener en este caso los métodos `string
 NormalizeString(string)` y `bool IsPangram(string)`. La estructura repetitiva
 `for-in` the Python corresponde en este caso en C# a la estructura repetitiva
 [`foreach`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/iteration-statements#the-foreach-statement).
@@ -890,6 +890,7 @@ Al igual que `for-in`, `foreach` visita cada elemento del contenedor indicado,
 en este caso una cadena de caracteres.
 
 ```csharp
+Console.WriteLine("C#");
 Console.WriteLine(Functions.IsPangram(
     "El viejo Señor Gómez pedía queso, kiwi y habas, pero le ha tocado un saxofón")); // True
 Console.WriteLine(Functions.IsPangram(
@@ -1095,6 +1096,8 @@ El otro método de la clase `Functions` implementa la función para generar el
 tablero:
 
 ```csharp
+public static class Functions
+{
     public static List<List<int>> GenerateLotteryBoard()
     {
         List<int> lotteryNumbers = new List<int>();
@@ -1111,6 +1114,7 @@ tablero:
         List<List<int>> lotteryBoard = new List<List<int>>() { row1, row2, row3 };
         return lotteryBoard;
     }
+}
 ```
 
 Algunas diferencias con Python:
@@ -1126,5 +1130,25 @@ Algunas diferencias con Python:
 > El resultado del método `GenerateLotteryBoard` es de tipo `List<List<int>>`
 > que es una lista cuyos elementos son listas de enteros.
 
+El programa principal que usa esas funciones queda así:
+
+```csharp
+Console.WriteLine("C#");
+Console.Write("[");
+foreach (var row in Functions.GenerateLotteryBoard())
+{
+    Console.Write("[");
+    Console.Write(String.Join(",", row));
+    Console.Write("]");
+}
+Console.Write("]");
+```
+
+Nota que si pasas una lista a `Console.WriteLine()` no se imprimirán los
+elementos como sucede en Python. Es necesario iterar por las listas imprimiendo
+cada uno de sus elementos con `for-each`. Cuando la lista contiene tipos de
+datos elementales como `int` o `string` puedes usar `String.Join(char, List<T>)`
+que convierte los elementos de la lista a una cadena separándolos con el
+carácter indicado como primer parámetro.
 
 Puedes ver y ejecutar el código [aquí](./Ejercicio_7/Ejercicio_7.cs).

@@ -20,6 +20,7 @@ def is_pangram(input_string):
     return True
 
 
+print("Python")
 print(is_pangram("El viejo Señor Gómez pedía queso, kiwi y habas, pero le ha tocado un saxofón")) # True
 print(is_pangram("José compró una vieja zampoña en Perú. Excusándose, Sofía tiró su whisky al desagüe de la banqueta")) # True
 print(is_pangram("El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo")) # True
